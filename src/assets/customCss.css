@@ -1,0 +1,10 @@
+.awssld__bullets {
+    bottom: -40px; /* Adjust the positioning if necessary */
+  }
+  
+  .awssld__bullets button {
+    width: 10px; /* Set the desired width */
+    height: 10px; /* Set the desired height */
+    margin: 0 5px; /* Adjust spacing between bullets */
+    background-color: #808080; /* Optional: Change bullet color */
+  }
