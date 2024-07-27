@@ -9,13 +9,12 @@ const ConsultationForm = () => {
 
   function Submit(e) {
     e.preventDefault();
-    setIsLoading(true); // Show loader
+    setIsLoading(true);
     const formEle = document.querySelector("form");
     const formData = new FormData(formEle);
-    console.log("Selected Option: ", selectedOption); // Debug log
+    console.log("Selected Option: ", selectedOption);
     formData.append("Bills", selectedOption);
     
-    // Set a timeout to hide loader after 10 seconds (adjust as needed)
     const timeout = setTimeout(() => {
       setIsLoading(false);
     }, 3500);
@@ -29,14 +28,13 @@ const ConsultationForm = () => {
     )
       .then((response) => {
         console.log("Submitted");
-        formEle.reset(); // Clear the form fields
-        setSelectedOption(""); // Reset the selected option
-        setIsSubmitted(true); // Set the submitted flag to true
-        setTimeout(() => setIsSubmitted(false), 3000); // Hide message after 3 seconds
+        formEle.reset();
+        setSelectedOption("");
+        setIsSubmitted(true);
+        setTimeout(() => setIsSubmitted(false), 3000);
       })
       .catch((error) => {
         console.error("Error submitting form:", error);
-        // Handle error if needed
       })
       .finally(() => {
         clearTimeout(timeout);
